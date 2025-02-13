@@ -5,10 +5,10 @@
     <color name="purple_700">#3700B3</color>
     <color name="teal_200">#03DAC5</color>
     <color name="teal_700">#018786</color>
-    <color name="black">#161616</color> <!-- Fondo Oscuro -->
-    <color name="white">#FFFFFF</color> <!-- Texto Claro -->
+    <color name="black">#313030</color> <!-- Fondo Oscuro -->
+    <color name="white">#232222</color> <!-- Texto Claro -->
     <color name="buttonText">#FFFFFF</color> <!-- Texto de Botón -->
-    <color name="buttonBackground">#1F1F1F</color> <!-- Botón más oscuro -->
+    <color name="buttonBackground">#CAC3C3</color> <!-- Botón más oscuro -->
     <color name="buttonPressed">#333333</color> <!-- Color cuando se presiona -->
-    <color name="buttonBorder">#6200EE</color> <!-- Borde morado -->
+    <color name="buttonBorder">#CCB3E2</color> <!-- Borde morado -->
 </resources>
