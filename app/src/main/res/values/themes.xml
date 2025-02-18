@@ -1,5 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.MadLions" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.ModernApp" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorOnPrimary">@color/buttonText</item>
+        <item name="colorSecondary">@color/accentColor</item>
+        <item name="colorSurface">@color/surfaceColor</item>
+        <item name="android:windowBackground">@color/backgroundColor</item>
+    </style>
 </resources>

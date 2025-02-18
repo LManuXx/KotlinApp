@@ -1,14 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#BB86FC</color>
-    <color name="purple_500">#6200EE</color>
-    <color name="purple_700">#3700B3</color>
-    <color name="teal_200">#03DAC5</color>
-    <color name="teal_700">#018786</color>
-    <color name="black">#313030</color> <!-- Fondo Oscuro -->
-    <color name="white">#232222</color> <!-- Texto Claro -->
-    <color name="buttonText">#FFFFFF</color> <!-- Texto de Botón -->
-    <color name="buttonBackground">#CAC3C3</color> <!-- Botón más oscuro -->
-    <color name="buttonPressed">#333333</color> <!-- Color cuando se presiona -->
-    <color name="buttonBorder">#CCB3E2</color> <!-- Borde morado -->
+    <!-- Colores Principales -->
+    <color name="primaryColor">#1E1E2E</color> <!-- Azul oscuro profundo -->
+    <color name="primaryVariant">#181825</color> <!-- Azul aún más oscuro -->
+    <color name="secondaryColor">#89B4FA</color> <!-- Azul claro vibrante -->
+    <color name="secondaryVariant">#74C7EC</color> <!-- Azul cyan suave -->
+    <color name="accentColor">#FAB387</color> <!-- Naranja suave pastel -->
+
+    <!-- Colores de Fondo -->
+    <color name="backgroundColor">#090C14</color> <!-- Negro azuloso -->
+    <color name="surfaceColor">#1A1B26</color> <!-- Gris oscuro para tarjetas -->
+
+    <!-- Colores de Texto -->
+    <color name="textPrimary">#D9E0EE</color> <!-- Blanco con tono azul -->
+    <color name="textSecondary">#A6ADC8</color> <!-- Gris claro con tono azul -->
+
+    <!-- Colores para Botones -->
+    <color name="buttonText">#FFFFFF</color> <!-- Texto blanco puro -->
+    <color name="buttonBackground">#4C4F69</color> <!-- Azul grisáceo oscuro -->
+    <color name="buttonPressed">#313244</color> <!-- Azul oscuro al presionar -->
+    <color name="buttonBorder">#A6E3A1</color> <!-- Verde pastel -->
+
+    <!-- Gradientes para Botones -->
+    <color name="buttonGradientStart">#6C7086</color> <!-- Gris azulado -->
+    <color name="buttonGradientEnd">#45475A</color> <!-- Azul grisáceo oscuro -->
+    <color name="buttonPressedStart">#313244</color> <!-- Azul aún más oscuro -->
+    <color name="buttonPressedEnd">#1E1E2E</color> <!-- Casi negro -->
+
+    <!-- Sombra de Botón -->
+    <color name="buttonShadow">#88000000</color> <!-- Sombra negra suave -->
+
+    <!-- Otros Colores -->
+    <color name="errorColor">#F38BA8</color> <!-- Rojo pastel -->
+    <color name="white">#D9E0EE</color>
+    <color name="black">#090C14</color>
 </resources>

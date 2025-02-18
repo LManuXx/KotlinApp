@@ -5,17 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/background_gradient"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/button_second"
-        android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:background="@drawable/button_background"
+        style="@style/ModernButton"
         android:text="Second Screen"
-        android:textColor="@color/white"
-        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/button_third"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,12 +19,8 @@
 
     <Button
         android:id="@+id/button_third"
-        android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:background="@drawable/button_background"
+        style="@style/ModernButton"
         android:text="Third Screen"
-        android:textColor="@color/white"
-        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
