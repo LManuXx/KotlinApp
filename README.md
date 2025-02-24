@@ -5,10 +5,10 @@ This Android application includes **three activities** with different functional
 
 ## 📱 Screenshots
 ### 🌍 **Map with OpenStreetMap**
-<img src="images/openstreetmap_screenshot.png" width="350">
+<img src="images/openstreetmap_screenshot.jpg" width="350">
 
 ### 🏠 **Main Screen**
-<img src="images/main_activity_screenshot.png" width="350">
+<img src="images/main_activity_screenshot.jpg" width="350">
 
 ---
 
