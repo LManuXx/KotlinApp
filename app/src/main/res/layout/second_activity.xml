@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    tools:context=".SecondActivity">
+
+    <WebView
+        android:id="@+id/mapView"
+        android:layout_width="265dp"
+        android:layout_height="369dp"
+        app:layout_constraintBottom_toTopOf="@id/text_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:padding="16dp"
+        android:text="Ubicación: No disponible"
+        android:textColor="@color/normalText"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_get_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapView"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/button_get_location"
+        style="@style/ModernButton"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:text="Obtener Ubicación"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@id/button_return"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_location" />
+
+    <Button
+        android:id="@+id/button_return"
+        style="@style/ModernButton"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:text="Regresar"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_get_location" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

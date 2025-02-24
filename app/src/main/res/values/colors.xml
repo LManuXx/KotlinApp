@@ -1,0 +1,14 @@
+<resources>
+    <!-- Colores Principales -->
+    <color name="primaryColor">#388E3C</color> <!-- Verde oscuro suave -->
+    <color name="primaryDarkColor">#2E7D32</color> <!-- Verde oscuro al presionar -->
+    <color name="primaryBorderColor">#1B5E20</color> <!-- Verde más oscuro para bordes -->
+
+    <!-- Fondo -->
+    <color name="backgroundStartColor">#F5F5F5</color> <!-- Blanco grisáceo -->
+    <color name="backgroundEndColor">#BFBFBF</color> <!-- Gris claro -->
+
+    <!-- Colores de Texto -->
+    <color name="buttonText">#FFFFFF</color> <!-- Texto blanco -->
+    <color name="normalText">#141313</color>
+</resources>
