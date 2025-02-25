@@ -10,16 +10,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main) // Inflamos el XML
 
-        // Botón para ir a SecondActivity
-        val buttonSecond = findViewById<Button>(R.id.button_second)
-        buttonSecond.setOnClickListener {
-            startActivity(Intent(this, SecondActivity::class.java))
+        // Botón para ir al registro
+        val buttonRegister = findViewById<Button>(R.id.button_register)
+        buttonRegister.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
 
-        // Botón para ir a ThirdActivity
-        val buttonThird = findViewById<Button>(R.id.button_third)
-        buttonThird.setOnClickListener {
-            startActivity(Intent(this, ThirdActivity::class.java))
+        // Botón para ir al login (lo crearemos después)
+        val buttonLogin = findViewById<Button>(R.id.button_login)
+        buttonLogin.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 }

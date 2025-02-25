@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "985537482037",
+    "project_id": "madrid-fonts",
+    "storage_bucket": "madrid-fonts.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985537482037:android:47977ce07b67a4f4cfd07c",
+        "android_client_info": {
+          "package_name": "com.example.mad_lions"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVh2HoSSFengXISLVoYn4TU5MaZoHV0o4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
