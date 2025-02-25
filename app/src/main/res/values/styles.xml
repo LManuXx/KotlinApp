@@ -5,7 +5,7 @@
         <item name="android:layout_height">50dp</item>
         <item name="android:background">@drawable/button_background</item>
         <item name="android:backgroundTint">@null</item> <!-- Evita herencia del tema -->
-        <item name="android:textColor">#FFFFFF</item> <!-- Texto en blanco -->
+        <item name="android:textColor">@color/buttonText</item> <!-- Texto en blanco -->
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:padding">10dp</item>

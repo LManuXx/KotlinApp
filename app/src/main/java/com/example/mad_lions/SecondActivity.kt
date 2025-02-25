@@ -3,6 +3,7 @@ package com.example.mad_lions
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
@@ -30,9 +31,11 @@ class SecondActivity : AppCompatActivity() {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         // Configurar WebView para OpenStreetMap
+        val webSettings: WebSettings = webView.settings
+        webSettings.javaScriptEnabled = true // Habilitar JS para Leaflet
+
         webView.webViewClient = WebViewClient()
-        webView.settings.javaScriptEnabled = true
-        webView.loadUrl("https://www.openstreetmap.org")
+        webView.loadUrl("file:///android_asset/map.html") // Cargar el mapa localmente
 
         val buttonLocation = findViewById<Button>(R.id.button_get_location)
         buttonLocation.setOnClickListener {
@@ -50,8 +53,7 @@ class SecondActivity : AppCompatActivity() {
             fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
                 if (location != null) {
                     locationTextView.text = "Lat: ${location.latitude}, Lng: ${location.longitude}"
-                    val osmUrl = "https://www.openstreetmap.org/#map=15/${location.latitude}/${location.longitude}"
-                    webView.loadUrl(osmUrl)
+                    webView.evaluateJavascript("updateMap(${location.latitude}, ${location.longitude});", null)
                 } else {
                     Toast.makeText(this, "Ubicación no disponible", Toast.LENGTH_SHORT).show()
                 }
