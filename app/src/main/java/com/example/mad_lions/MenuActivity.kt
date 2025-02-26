@@ -18,10 +18,16 @@ class MenuActivity : AppCompatActivity() {
 
         val btnGoToMap = findViewById<Button>(R.id.btnGoToMap)
         val btnLogout = findViewById<Button>(R.id.btnLogout)
+        val btnAddLocation = findViewById<Button>(R.id.btnAddLocation)
 
         // Ir a SecondActivity (Mapa)
         btnGoToMap.setOnClickListener {
-            startActivity(Intent(this, SecondActivity::class.java))
+            startActivity(Intent(this, SavedPoints::class.java))
+        }
+
+        // Añadir ubicacion del agua
+        btnAddLocation.setOnClickListener {
+            startActivity(Intent(this, AddLocationActivity::class.java))
         }
 
         // Cerrar sesión y volver al login

@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class InitialActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main) // Inflamos el XML
+        setContentView(R.layout.activity_initial) // Inflamos el XML
 
         // Botón para ir al registro
         val buttonRegister = findViewById<Button>(R.id.button_register)

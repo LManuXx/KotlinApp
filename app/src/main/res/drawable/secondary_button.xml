@@ -4,9 +4,9 @@
     <!-- Estado presionado -->
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
-            <solid android:color="#2E7D32"/> <!-- Verde más oscuro al presionar -->
-            <corners android:radius="16dp"/> <!-- Bordes más redondeados -->
-            <stroke android:width="2dp" android:color="#1B5E20"/> <!-- Borde verde intenso -->
+            <solid android:color="#81C784"/> <!-- Verde claro al presionar -->
+            <corners android:radius="16dp"/>
+            <stroke android:width="2dp" android:color="#388E3C"/> <!-- Borde más oscuro -->
             <padding android:left="16dp" android:right="16dp"/>
         </shape>
     </item>
@@ -14,9 +14,9 @@
     <!-- Estado normal -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#4CAF50"/> <!-- Verde moderno y vibrante -->
+            <solid android:color="#A5D6A7"/> <!-- Verde más suave -->
             <corners android:radius="16dp"/>
-            <stroke android:width="2dp" android:color="#388E3C"/> <!-- Borde más oscuro -->
+            <stroke android:width="2dp" android:color="#66BB6A"/> <!-- Verde intermedio -->
             <padding android:left="16dp" android:right="16dp"/>
         </shape>
     </item>

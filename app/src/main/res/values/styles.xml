@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="ModernButton" >
+
+    <!-- 🌟 Botón Principal - Estilo Moderno -->
+    <style name="ModernButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">42dp</item> <!-- Reducido de 50dp a 42dp -->
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/white</item> <!-- Texto blanco -->
+        <item name="android:textSize">14sp</item> <!-- Tamaño de texto más pequeño -->
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:padding">8dp</item> <!-- Padding más reducido -->
+        <item name="android:elevation">12dp</item> <!-- Sombra menos pronunciada -->
+        <item name="android:letterSpacing">0.03</item> <!-- Menos espacio entre letras -->
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 🎨 Botón Secundario - Más Claro -->
+    <style name="ModernButton.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">50dp</item>
-        <item name="android:background">@drawable/button_background</item>
-        <item name="android:backgroundTint">@null</item> <!-- Evita herencia del tema -->
-        <item name="android:textColor">@color/buttonText</item> <!-- Texto en blanco -->
-        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/secondary_button</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:padding">10dp</item>
-        <item name="android:elevation">6dp</item> <!-- Sombra ligera -->
+        <item name="android:padding">12dp</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:gravity">center</item>
     </style>
+
+    <!-- 🔳 Botón Minimalista - Sin Fondo -->
+    <style name="ModernButton.Minimal" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/primaryDarkColor</item> <!-- Verde oscuro -->
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>
