@@ -1,14 +1,14 @@
 # 📌 Mad Lions App
 
 ## 🚀 Project Description
-This Android application includes **three activities** with different functionalities, including the use of **Google Services** and **OpenStreetMap**. Custom-styled buttons and a clean design have been implemented for navigation.
+Mad Lions App is an **Android application** that allows users to **discover, add, and save points of interest**, such as **water fountains** in Madrid. The app integrates **OpenStreetMap (OSM) instead of Google Maps**, uses **Firebase Authentication**, and features a **modern UI with custom-styled components**.
 
 ## 📱 Screenshots
 ### 🌍 **Map with OpenStreetMap**
 <img src="images/openstreetmap_screenshot.jpg" width="350">
 
-### 🏠 **Main Screen**
-<img src="images/main_activity_screenshot.jpg" width="350">
+### 🏠 **Main Menu**
+<img src="images/menu_activity_screenshot.jpg" width="350">
 
 ---
 
@@ -19,70 +19,93 @@ This Android application includes **three activities** with different functional
 │   ├── 📂 src
 │   │   ├── 📂 main
 │   │   │   ├── 📂 java/com/example/mad_lions
-│   │   │   │   ├── MainActivity.kt  # Main screen
-│   │   │   │   ├── SecondActivity.kt  # Screen with map and location
-│   │   │   │   ├── ThirdActivity.kt  # Nothing at this moment
+│   │   │   │   ├── MainActivity.kt  # Initial screen with login/register
+│   │   │   │   ├── MenuActivity.kt  # Main navigation menu
+│   │   │   │   ├── LoginActivity.kt  # User authentication (Firebase)
+│   │   │   │   ├── RegisterActivity.kt  # New user registration (Firebase)
+│   │   │   │   ├── SavedPoints.kt  # OpenStreetMap screen with saved locations
+│   │   │   │   ├── AddLocationActivity.kt  # Allows users to add new locations
+│   │   │   │   ├── ImageViewActivity.kt  # Displays uploaded images
 │   │   │   ├── 📂 res
-│   │   │   │   ├── 📂 drawable  # Design and styles
+│   │   │   │   ├── 📂 drawable  # Icons, backgrounds, and UI assets
 │   │   │   │   ├── 📂 layout  # XML files for Activities
 │   │   │   │   │   ├── activity_main.xml
-│   │   │   │   │   ├── second_activity.xml
-│   │   │   │   │   ├── third_activity.xml
+│   │   │   │   │   ├── activity_menu.xml
+│   │   │   │   │   ├── activity_login.xml
+│   │   │   │   │   ├── activity_register.xml
+│   │   │   │   │   ├── activity_saved_points.xml
+│   │   │   │   │   ├── activity_add_location.xml
+│   │   │   │   │   ├── activity_image_view.xml
 │   │   │   │   ├── 📂 values  # Colors, strings, and styles
 │   │   │   │   │   ├── colors.xml
 │   │   │   │   │   ├── strings.xml
 │   │   │   │   │   ├── styles.xml
-│   │   │   │   ├
-│   │   │   │   │   
+│   │   │   │   │   ├── themes.xml
+│   │   │   │   ├── 📂 xml  # Backup and data extraction rules
+│   │   │   │   │   ├── data_extraction_rules.xml
+│   │   │   │   │   ├── backup_rules.xml
+│   │   │   │   │   ├── network_security_config.xml  # Security settings for network requests
+│   │   │   │   ├── 📂 assets  # Static files like HTML for WebView integration
+│   │   │   │   │   ├── map.html  # OpenStreetMap WebView alternative (if used)
+│   │   │   ├── 📂 manifests
+│   │   │   │   ├── AndroidManifest.xml  # App configuration, permissions, and Firebase setup
+│   │   │   ├── 📂 gradle
+│   │   │   │   ├── build.gradle  # Dependencies and build configurations
+│   │   │   │   ├── gradle.properties  # Project-wide settings
+│   │   │   │   ├── settings.gradle  # Module linking
+│   │   │   ├── google-services.json  # Firebase authentication and database config (not included in repo)
 ```
-
 ---
 
 ## 📌 **Implemented Features**
-### 🏠 **1. MainActivity**
-📌 **Description:**
-- Main screen with buttons to navigate to other activities.
-- Custom-styled buttons.
+### 🏠 **1. MainActivity (Home Screen)**
+📌 **Features:**
+- Initial screen where users can **Login** or **Register**.
+- Modern, clean UI with **custom-styled buttons**.
+- **Responsive design** that adapts to different screen sizes.
 
-### 📍 **2. SecondActivity (Location and Maps)**
-📌 **Description:**
-- **OpenStreetMap (WebView)**
-    - Loads OpenStreetMap in a WebView.
-    - Displays the user’s location with a dynamic marker.
-    - Communicates location from Android to JavaScript in `map.html`.
+### 🗺 **2. SavedPoints (Map & Locations)**
+📌 **Features:**
+- **Uses OpenStreetMap (OSM) instead of Google Maps**.
+- Displays **saved points of interest** on an interactive map.
+- Users can view their **current location**.
+- Allows users to **zoom and navigate freely** within the map.
+- Custom **markers** are used for added locations.
+- Map settings are stored locally for a **better user experience**.
 
-### 🔹 **3. ThirdActivity**
-📌 **Description:**
-- Contains an extra functionality (pending implementation).
+### ➕ **3. AddLocationActivity (Add New Location)**
+📌 **Features:**
+- Allows users to **add a new location** by filling out:
+  - **Name**
+  - **Description**
+  - **Image Upload**
+- **Modern UI elements**, following Material Design.
+- **Custom input fields with soft borders** for better usability.
+- Users can **preview images before uploading**.
+- The data is stored persistently, making it **available upon reopening the app**.
 
----
+### 🔐 **4. Firebase Authentication (Login & Register)**
+📌 **Features:**
+- Secure **user authentication using Firebase**.
+- Users can **sign in with email and password**.
+- **Session persistence** ensures that users stay logged in.
+- **Login and registration validation** prevents incorrect input.
+- Logout functionality added in the **MenuActivity**.
 
-## 🎨 **Design and Styles**
-📌 **Custom-styled buttons with rounded corners and soft colors.**
-📌 **Usage of `styles.xml` for visual consistency.**
-📌 **Background with smooth gradients for better aesthetics.**
+### 📸 **5. ImageViewActivity (View Images)**
+📌 **Features:**
+- Displays **uploaded images** of saved locations.
+- Users can **zoom in and view images in full-screen mode**.
+- **Glide library** is used for optimized image loading and caching.
 
----
-
-## 🚀 **How to Run the Project**
-### 🔹 **1. Clone the Repository**
-```bash
-git clone https://github.com/user/MadLionsApp.git
-cd MadLionsApp
-```
-### 🔹 **2. Open in Android Studio**
-1. Open **Android Studio**.
-2. Import the project from the `MadLionsApp` folder.
-3. Connect a device or use an emulator.
-4. Press `Run ▶` to execute the application.
-
-### 🔹 **3. Configure Google Maps API (If Using Google Services)**
-If you decide to use Google Maps instead of OpenStreetMap, add your API key in `AndroidManifest.xml`:
-```xml
-<meta-data
-    android:name="com.google.android.geo.API_KEY"
-    android:value="YOUR_API_KEY_HERE"/>
-```
+### 🏠 **6. MenuActivity (Navigation Menu)**
+📌 **Features:**
+- Main menu for navigation, including:
+  - **View Saved Locations**
+  - **Add New Locations**
+  - **Logout**
+- Uses **modern Material Design components** for navigation.
+- A **clear structure** that allows users to access features intuitively.
 
 ---
 
@@ -90,7 +113,9 @@ If you decide to use Google Maps instead of OpenStreetMap, add your API key in `
 - ✅ **Kotlin** (Main language)
 - ✅ **Android Jetpack** (ConstraintLayout, Navigation, etc.)
 - ✅ **OpenStreetMap + WebView** (Version without Google dependencies)
-
+- ✅ Firebase Authentication (Secure login and registration system)
+- ✅ Material Design Components (Buttons, UI styles, typography)
+- ✅ Glide Library (For efficient image loading and caching)
 ---
 
 ## 🔥 **Author**
