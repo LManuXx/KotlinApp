@@ -40,7 +40,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SavedPoints"
+            android:name=".SavedPointsActivity"
             android:exported="true" />
 
     </application>

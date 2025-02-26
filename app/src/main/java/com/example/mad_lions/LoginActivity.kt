@@ -33,8 +33,8 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            //quitar
-            startActivity(Intent(this, MenuActivity::class.java))
+
+            //startActivity(Intent(this, MenuActivity::class.java))
 
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->

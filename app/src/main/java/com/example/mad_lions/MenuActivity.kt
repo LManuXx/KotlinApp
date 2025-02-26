@@ -22,7 +22,7 @@ class MenuActivity : AppCompatActivity() {
 
         // Ir a SecondActivity (Mapa)
         btnGoToMap.setOnClickListener {
-            startActivity(Intent(this, SavedPoints::class.java))
+            startActivity(Intent(this, SavedPointsActivity::class.java))
         }
 
         // Añadir ubicacion del agua
