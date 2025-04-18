@@ -1,106 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    android:background="@drawable/background_gradient"
     tools:context=".AddLocationActivity">
 
-    <!-- 🏷 Campo de texto para el nombre -->
-    <EditText
-        android:id="@+id/etName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Nombre de la fuente"
-        android:inputType="text"
-        android:background="@drawable/edit_text_bg"
-        android:padding="12dp"
-        android:textSize="16sp"
-        android:fontFamily="sans-serif"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- 📝 Campo de texto para la descripción -->
-    <EditText
-        android:id="@+id/etDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Descripción"
-        android:inputType="textMultiLine"
-        android:background="@drawable/edit_text_bg"
-        android:padding="12dp"
-        android:textSize="16sp"
-        android:fontFamily="sans-serif"
-        app:layout_constraintTop_toBottomOf="@id/etName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
-
-    <!-- 📸 Imagen de previsualización con borde -->
-    <ImageView
-        android:id="@+id/ivPhoto"
-        android:layout_width="299dp"
-        android:layout_height="319dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/image_border"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etDescription" />
-
-    <!-- 📷 Botón para seleccionar la foto -->
-    <Button
-        android:id="@+id/btnSelectPhoto"
-        style="@style/ModernButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Seleccionar Foto"
-        android:elevation="6dp"
-        app:layout_constraintTop_toBottomOf="@id/ivPhoto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        app:backgroundTint="@null"/>
-
-    <!-- ✅ Botón para guardar la ubicación -->
-    <Button
-        android:id="@+id/btnSaveLocation"
-        style="@style/ModernButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Guardar Ubicación"
-        android:elevation="6dp"
-        app:layout_constraintTop_toBottomOf="@id/btnSelectPhoto"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        app:backgroundTint="@null"/>
-
-    <!-- 📌 Footer - Información Adicional -->
-    <TextView
-        android:id="@+id/tvFooter"
+    <!-- ▸ Contenido principal (tal cual lo tenías) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Madrid Founts."
-        android:textSize="14sp"
-        android:fontFamily="sans-serif-light"
-        android:textColor="@color/primaryDarkColor"
-        android:gravity="center"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="12dp"/>
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:background="@drawable/background_gradient">
 
-    <include layout="@layout/partial_fab_back"/>
+        <!-- 🏷 Campo de texto para el nombre -->
 
+        <!-- 📝 Campo de texto para la descripción -->
 
+        <!-- 📸 Imagen de previsualización con borde -->
 
+        <!-- 📷 Botón para seleccionar la foto -->
 
+        <!-- ✅ Botón para guardar la ubicación -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 📌 Footer -->
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="sans-serif"
+            android:hint="Nombre de la fuente"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="sans-serif"
+            android:hint="Descripción"
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etName" />
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="209dp"
+            android:layout_height="241dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/image_border"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDescription" />
+
+        <Button
+            android:id="@+id/btnSelectPhoto"
+            style="@style/ModernButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:elevation="6dp"
+            android:text="Seleccionar Foto"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivPhoto" />
+
+        <Button
+            android:id="@+id/btnSaveLocation"
+            style="@style/ModernButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:elevation="6dp"
+            android:text="Guardar Ubicación"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectPhoto" />
+
+        <TextView
+            android:id="@+id/tvFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Madrid Founts."
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/primaryDarkColor"
+            android:gravity="center"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- FAB atrás -->
+        <include layout="@layout/partial_fab_back"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ▸ Menú lateral -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>

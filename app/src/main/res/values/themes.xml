@@ -1,6 +1,10 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.Mad_Lions" parent="Theme.Material3.DayNight.NoActionBar">
-
+<resources>
+    <!-- Tema base con barra de acción -->
+    <style name="Base.Theme.Mad_Lions" parent="Theme.Material3.DayNight">
+        <!-- Si tenías estas líneas, elimínalas o coméntalas:
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        -->
     </style>
 
     <style name="Theme.Mad_Lions" parent="Base.Theme.Mad_Lions" />
