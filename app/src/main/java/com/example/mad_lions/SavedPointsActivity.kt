@@ -10,6 +10,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
@@ -42,6 +43,11 @@ class SavedPointsActivity : AppCompatActivity() {
 
         // Cargar las ubicaciones guardadas
         loadLocations()
+
+        findViewById<FloatingActionButton>(R.id.fabBack)?.setOnClickListener {
+            finish()
+        }
+
     }
 
     private fun getCurrentLocation() {

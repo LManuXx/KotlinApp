@@ -13,4 +13,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"/>
 
+    <include layout="@layout/partial_fab_back"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

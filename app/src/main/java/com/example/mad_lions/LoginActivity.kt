@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -22,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         val etLoginEmail = findViewById<EditText>(R.id.etLoginEmail)
         val etLoginPassword = findViewById<EditText>(R.id.etLoginPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val tvRegisterRedirect = findViewById<TextView>(R.id.tvRegisterRedirect)
+        val tvRegisterRedirect = findViewById<TextView>(R.id.tvGoToRegister)
 
         btnLogin.setOnClickListener {
             val email = etLoginEmail.text.toString().trim()
@@ -51,5 +52,10 @@ class LoginActivity : AppCompatActivity() {
         tvRegisterRedirect.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
+
+        findViewById<FloatingActionButton>(R.id.fabBack)?.setOnClickListener {
+            finish()
+        }
+
     }
 }

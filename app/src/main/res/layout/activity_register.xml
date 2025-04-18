@@ -96,4 +96,7 @@
         android:layout_marginTop="12dp"
         android:clickable="true"
         android:focusable="true"/>
+
+    <include layout="@layout/partial_fab_back"/>
 </LinearLayout>
+

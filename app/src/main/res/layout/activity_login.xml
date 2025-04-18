@@ -58,13 +58,13 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
+        style="@style/ModernButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar Sesión"
         android:layout_marginTop="20dp"
-        app:cornerRadius="12dp"
-        style="@style/ModernButton"
-        app:backgroundTint="@null"/>
+        android:text="Iniciar Sesión"
+        app:backgroundTint="@null"
+        app:cornerRadius="12dp" />
 
     <TextView
         android:id="@+id/tvGoToRegister"
@@ -77,4 +77,8 @@
         android:layout_marginTop="12dp"
         android:clickable="true"
         android:focusable="true"/>
+
+
+    <include layout="@layout/partial_fab_back"/>
+
 </LinearLayout>

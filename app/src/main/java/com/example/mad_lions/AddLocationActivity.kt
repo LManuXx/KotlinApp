@@ -17,6 +17,7 @@ import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.util.*
 
 class AddLocationActivity : AppCompatActivity() {
@@ -53,9 +54,15 @@ class AddLocationActivity : AppCompatActivity() {
                 saveLocation()
             }
         }
+        findViewById<FloatingActionButton>(R.id.fabBack)?.setOnClickListener {
+            finish()
+        }
+
 
         requestLocationUpdates()
     }
+
+
 
     private fun requestLocationUpdates() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&

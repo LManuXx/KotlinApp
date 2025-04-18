@@ -86,7 +86,7 @@
         android:id="@+id/tvFooter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Comparte y descubre fuentes en toda la ciudad."
+        android:text="Madrid Founts."
         android:textSize="14sp"
         android:fontFamily="sans-serif-light"
         android:textColor="@color/primaryDarkColor"
@@ -96,6 +96,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="12dp"/>
+
+    <include layout="@layout/partial_fab_back"/>
+
+
 
 
 
