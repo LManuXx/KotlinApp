@@ -3,12 +3,6 @@
 ## 🚀 Project Description
 Mad Lions App is an **Android application** that allows users to **discover, add, and save points of interest**, such as **water fountains** in Madrid. The app integrates **OpenStreetMap (OSM) instead of Google Maps**, uses **Firebase Authentication**, and features a **modern UI with custom-styled components**.
 
-## 📱 Screenshots
-### 🌍 **Map with OpenStreetMap**
-<img src="images/openstreetmap_screenshot.jpg" width="350">
-
-### 🏠 **Main Menu**
-<img src="images/menu_activity_screenshot.jpg" width="350">
 
 ---
 

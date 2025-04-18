@@ -17,6 +17,9 @@ import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
 import androidx.core.content.ContextCompat
+import android.graphics.Color
+import org.osmdroid.views.overlay.Polyline
+
 
 class SavedPointsActivity : AppCompatActivity() {
 
@@ -24,6 +27,8 @@ class SavedPointsActivity : AppCompatActivity() {
     private lateinit var db: FirebaseFirestore
     private var locationListener: ListenerRegistration? = null
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private val CONNECTION_THRESHOLD_METERS = 1000000.0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,27 +82,56 @@ class SavedPointsActivity : AppCompatActivity() {
                     return@addSnapshotListener
                 }
 
-                // Limpiar el mapa
+                // 1) Limpia todo
                 map.overlays.clear()
 
+                // 2) Acumula puntos y crea marcadores
+                val puntos = mutableListOf<GeoPoint>()
                 snapshots?.forEach { document ->
-                    val name        = document.getString("name") ?: "Sin nombre"
-                    val description = document.getString("description") ?: "Sin descripción"
-                    val lat         = document.getDouble("latitude")  ?: 0.0
-                    val lon         = document.getDouble("longitude") ?: 0.0
+                    val lat = document.getDouble("latitude") ?: 0.0
+                    val lon = document.getDouble("longitude")?: 0.0
+                    val geo = GeoPoint(lat, lon)
 
+                    // marcador
                     val marker = Marker(map).apply {
-                        position = GeoPoint(lat, lon)
-                        icon = ContextCompat.getDrawable(this@SavedPointsActivity, R.drawable.ic_fountain)
+                        position = geo
+                        icon     = ContextCompat.getDrawable(
+                            this@SavedPointsActivity,
+                            R.drawable.ic_fountain
+                        )
                         setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-                        title   = name
-                        snippet = description
+                        title   = document.getString("name") ?: "Sin nombre"
+                        snippet = document.getString("description") ?: "Sin descripción"
                     }
                     map.overlays.add(marker)
+
+                    puntos.add(geo)
                 }
+
+                // 3) Une con líneas azules los puntos cercanos
+                for (i in 0 until puntos.size) {
+                    for (j in i + 1 until puntos.size) {
+                        val a = puntos[i]
+                        val b = puntos[j]
+                        // calcula distancia en metros
+                        val dist = a.distanceToAsDouble(b)
+                        if (dist <= CONNECTION_THRESHOLD_METERS) {
+                            val poly = Polyline(map).apply {
+                                setPoints(listOf(a, b))
+                                color   = Color.BLUE
+                                width   = 4f
+                                isGeodesic = true
+                            }
+                            map.overlays.add(poly)
+                        }
+                    }
+                }
+
+                // 4) Refresca
                 map.invalidate()
             }
     }
+
 
 
     override fun onDestroy() {

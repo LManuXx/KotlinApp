@@ -56,6 +56,9 @@ class MenuActivity : AppCompatActivity(),
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
+
+
+
     }
 
     // ─── Drawer callbacks ────────────────────────────────────────────────────
@@ -75,6 +78,7 @@ class MenuActivity : AppCompatActivity(),
             R.id.nav_home    -> startActivity(Intent(this, InitialActivity::class.java))
             R.id.nav_map     -> startActivity(Intent(this, SavedPointsActivity::class.java))
             R.id.nav_add     -> startActivity(Intent(this, AddLocationActivity::class.java))
+            R.id.nav_settings -> startActivity(Intent(this, SettingsActivity::class.java))
         }
         drawer.closeDrawer(GravityCompat.START)
         return true
