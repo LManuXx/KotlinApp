@@ -16,6 +16,7 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
+import androidx.core.content.ContextCompat
 
 class SavedPointsActivity : AppCompatActivity() {
 
@@ -76,30 +77,28 @@ class SavedPointsActivity : AppCompatActivity() {
                     return@addSnapshotListener
                 }
 
-                // Limpiar el mapa antes de añadir nuevos puntos
+                // Limpiar el mapa
                 map.overlays.clear()
 
-                // Añadir cada ubicación como un marcador en el mapa
                 snapshots?.forEach { document ->
-                    val name = document.getString("name") ?: "Sin nombre"
+                    val name        = document.getString("name") ?: "Sin nombre"
                     val description = document.getString("description") ?: "Sin descripción"
-                    val latitude = document.getDouble("latitude") ?: 0.0
-                    val longitude = document.getDouble("longitude") ?: 0.0
+                    val lat         = document.getDouble("latitude")  ?: 0.0
+                    val lon         = document.getDouble("longitude") ?: 0.0
 
-                    val geoPoint = GeoPoint(latitude, longitude)
-                    val marker = Marker(map)
-                    marker.position = geoPoint
-                    marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
-                    marker.title = name
-                    marker.snippet = description
-
+                    val marker = Marker(map).apply {
+                        position = GeoPoint(lat, lon)
+                        icon = ContextCompat.getDrawable(this@SavedPointsActivity, R.drawable.ic_fountain)
+                        setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+                        title   = name
+                        snippet = description
+                    }
                     map.overlays.add(marker)
                 }
-
-                // Refrescar el mapa para que los cambios se vean inmediatamente
                 map.invalidate()
             }
     }
+
 
     override fun onDestroy() {
         super.onDestroy()
