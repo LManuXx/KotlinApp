@@ -3,8 +3,7 @@
 ## Workspace 
 Github:  
 - Repository: https://github.com/LManuXx/KotlinApp
-
-Workspace: upm365.sharepoint.com/sites/MadLions
+- Workspace: https://upm365.sharepoint.com/sites/MADLions
 
 
 ## Description
